@@ -22,7 +22,7 @@ class Patch_PlayerDeath
         DateTime now = DateTime.Now;
         string localDateTime = now.ToString("yyyy-MM-dd HH:mm:ss");
 
-        string name = LogUtil.PlayerName();
+        string name = Player.localPlayer.photonView.Owner.NickName;
 
         float height = 0f;
         if (__instance.refs.stats != null)

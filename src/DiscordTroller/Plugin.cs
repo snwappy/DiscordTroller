@@ -25,8 +25,6 @@ public partial class Plugin : BaseUnityPlugin
     {
         Log = Logger;
 
-        //TO-DO: add more console logging to BepInEx for further debugging purpose.
-
         WebhookEnabled = Config.Bind(
             "Discord",
             "Enabled",

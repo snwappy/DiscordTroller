@@ -22,7 +22,7 @@ static class DiscordWebhook
             if (string.IsNullOrWhiteSpace(webhookUrl))
             {
                 Plugin.Log.LogWarning(
-                    "[DiscordTroller/DiscordWebhook] WebhookUrl = null. Sending message skipped..."
+                    "[DiscordWebhook] WebhookUrl is null. Skipping send."
                 );
                 return;
             }
@@ -42,13 +42,13 @@ static class DiscordWebhook
                 await client.PostAsync(url, content);
 
             Plugin.Log.LogInfo(
-                "[DiscordTroller/DiscordWebhook] Response: " +
+                "[DiscordWebhook] Response: " +
                 ((int)response.StatusCode) + " " + response.StatusCode
             );
         }
         catch (System.Exception ex)
         {
-            Plugin.Log.LogError("[DiscordTroller/DiscordWebhook] Unexpected error sending webhook...");
+            Plugin.Log.LogError("[DiscordWebhook] Error sending webhook...");
             Plugin.Log.LogError(ex.ToString());
         }
     }
