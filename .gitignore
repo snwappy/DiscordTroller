@@ -145,3 +145,4 @@ artifacts/obj/DiscordTroller/DiscordTroller.csproj.nuget.g.props
 artifacts/obj/DiscordTroller/DiscordTroller.csproj.nuget.g.targets
 artifacts/obj/DiscordTroller/project.assets.json
 artifacts/obj/DiscordTroller/project.nuget.cache
+*.zip
