@@ -25,6 +25,7 @@ public partial class Plugin : BaseUnityPlugin
     {
         Log = Logger;
 
+        //Configurations for Discord Webhook session
         WebhookEnabled = Config.Bind(
             "Discord",
             "Enabled",
@@ -46,6 +47,7 @@ public partial class Plugin : BaseUnityPlugin
             "Optional Discord thread ID (leave empty if unused)"
         );
 
+        //Configurations for in-game player event messages
         TplDeath = Config.Bind("Messages", "Death",
             "**{player}** died\nHeight: **{height} m**\nTimestamp: **{datetime}**\nRun session time: **{runtime}**",
             "Death message. Use \\n for new lines.");
