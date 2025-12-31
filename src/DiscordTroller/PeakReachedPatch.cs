@@ -37,6 +37,7 @@ class Patch_PeakReached
             ["player"] = name,
             ["datetime"] = localDateTime,
             ["runtime"] = RunTimeHelper.FormatTime(time),
+            ["height"] = height.ToString("0.0"),
             ["biome"] = GameStateHelper.GetReadableState(),
             ["room"] = GameStateHelper.GetRoomSize(),
             ["mode"] = GameStateHelper.GetGameMode(),

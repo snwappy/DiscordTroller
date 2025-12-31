@@ -16,6 +16,17 @@ class Patch_PlayerDeath
 
     static void Postfix(Character __instance)
     {
+        //Current local player instance only check
+        if (__instance == null) return;
+
+        if (__instance.refs == null ||
+            __instance.refs.view == null ||
+            !__instance.refs.view.IsMine)
+            return;
+
+        if (reported.Contains(__instance)) return;
+        reported.Add(__instance);
+
         // Retrieve game run time session
         float time = RunTimeHelper.GetRunTime();
 

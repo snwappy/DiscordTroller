@@ -11,6 +11,14 @@ static class Patch_PlayerRevive
 {
     static void Postfix(Character __instance)
     {
+        //Current local player instance only check
+        if (__instance == null) return;
+
+        if (__instance.refs == null ||
+            __instance.refs.view == null ||
+            !__instance.refs.view.IsMine)
+            return;
+
         //Retrieve player name
         string name = Player.localPlayer.photonView.Owner.NickName;
 
